@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="authentication_failed">Ошибка авторизации</string>
+
+	<string name="nav_item_news">Новости</string>
+	<string name="nav_item_chat">Общение</string>
+	<string name="nav_item_setting">Настройки</string>
+	<string name="nav_item_about">О приложении</string>
+
+	<string name="sign_out">Выйти</string>
+	<string name="sign_in">Войти</string>
+</resources>

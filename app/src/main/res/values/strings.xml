@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OnlyUA</string>
+	
+	<string name="authentication_failed">Authentication Failed.</string>
+	
+	<string name="nav_item_news">News</string>
+	<string name="nav_item_chat">Chat</string>
+	<string name="nav_item_setting">Setting</string>
+	<string name="nav_item_about">About</string>
+	
+	<string name="sign_out">Sign Out</string>
+	<string name="sign_in">Sign In</string>
+</resources>

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.mikepenz.community_material_typeface_library"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 35951
+        versionName "3.5.95.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation 'com.mikepenz:iconics-core:3.2.5'
+}
