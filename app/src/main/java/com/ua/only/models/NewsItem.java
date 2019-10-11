@@ -2,9 +2,9 @@ package com.ua.only.models;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.mikepenz.fastadapter.items.AbstractItem;
@@ -70,7 +70,7 @@ public class NewsItem extends AbstractItem<NewsItem, NewsItem.ViewHolder> {
 	protected static class ViewHolder extends RecyclerView.ViewHolder {
         TextView newsTitle;
         TextView newsDesc;
-		ImageView newsImg;
+		AppCompatImageView newsImg;
 
         public ViewHolder(View view) {
             super(view);

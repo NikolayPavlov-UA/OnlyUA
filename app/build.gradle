@@ -16,12 +16,14 @@ android {
         }
 		
 		debug {
-			
+			minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
     }
 }
 
 dependencies {
+	api project(':fontawesome_typeface_library')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 	
 	implementation project(':community_material_typeface_library')
