@@ -56,7 +56,7 @@ public class NewsItem extends AbstractItem<NewsItem, NewsItem.ViewHolder> {
 		holder.newsDesc.setText(desc);
 		holder.newsImg.setImageBitmap(null);
 		
-		Glide.with(ctx).load(imgUrl).into(holder.newsImg);
+		Glide.with(ctx).load(imgUrl).centerCrop().into(holder.newsImg);
 	}
 
 	@Override
@@ -65,6 +65,7 @@ public class NewsItem extends AbstractItem<NewsItem, NewsItem.ViewHolder> {
 		
 		Glide.with(holder.itemView.getContext()).clear(holder.newsImg);
 		holder.newsImg.setImageDrawable(null);
+		holder.newsDesc.setText(null);
 	}
 	
 	protected static class ViewHolder extends RecyclerView.ViewHolder {

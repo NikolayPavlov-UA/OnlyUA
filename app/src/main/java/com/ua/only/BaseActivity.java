@@ -3,6 +3,7 @@ package com.ua.only;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -71,7 +73,6 @@ public class BaseActivity extends HelperActivity {
 
 		toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
 		setupNavigation(savedInstanceState);
 
@@ -114,24 +115,26 @@ public class BaseActivity extends HelperActivity {
         navigation = new DrawerBuilder()
 			.withActivity(this)
 			.withToolbar(toolbar)
+			.withDisplayBelowStatusBar(false)
+			.withActionBarDrawerToggleAnimated(true)
 			.withHasStableIds(true)
 			.withAccountHeader(navigationHeader)
 			.addDrawerItems(
 				new PrimaryDrawerItem().withName(R.string.nav_item_news)
 									.withIdentifier(NAV_NEWS)
-									.withIcon(CommunityMaterial.Icon2.cmd_newspaper),
+									.withIcon(new IconicsDrawable(this, CommunityMaterial.Icon2.cmd_newspaper).color(Color.BLACK)),
 				new PrimaryDrawerItem().withName(R.string.nav_item_chat)
 									.withIdentifier(NAV_CHAT)
-									.withIcon(CommunityMaterial.Icon.cmd_chat),
+									.withIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_chat).color(Color.BLACK)),
 				new DividerDrawerItem(),
 				new SecondaryDrawerItem().withName(R.string.nav_item_setting)
 										.withIdentifier(NAV_SETTING)
 										.withSelectable(false)
-										.withIcon(CommunityMaterial.Icon2.cmd_settings_outline),
+										.withIcon(new IconicsDrawable(this, CommunityMaterial.Icon2.cmd_settings_outline).color(Color.BLACK)),
 				new SecondaryDrawerItem().withName(R.string.nav_item_about)
 										.withIdentifier(NAV_ABOUT)
 										.withSelectable(false)
-										.withIcon(CommunityMaterial.Icon2.cmd_information_outline)
+										.withIcon(new IconicsDrawable(this, CommunityMaterial.Icon2.cmd_information_outline).color(Color.BLACK))
 			)
 			.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
 				@Override
@@ -172,9 +175,6 @@ public class BaseActivity extends HelperActivity {
 			.withSavedInstance(savedInstanceState)
 			.withShowDrawerOnFirstLaunch(true)
 			.build();
-
-		navigation.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
-		navigation.getActionBarDrawerToggle().setDrawerSlideAnimationEnabled(true);
 
 		if (savedInstanceState == null) {
 			navigation.setSelection(NAV_NEWS, true);
@@ -266,7 +266,7 @@ public class BaseActivity extends HelperActivity {
 			navigationHeader.addProfiles(
 			    profile,
 				new ProfileSettingDrawerItem().withName(R.string.sign_out)
-											.withIcon(CommunityMaterial.Icon.cmd_exit_run)
+											.withIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_exit_run).color(Color.BLACK))
 											.withIdentifier(ACCOUNT_SIGN_OUT)
 			);
 			navigationHeader.setActiveProfile(profile);
@@ -275,7 +275,7 @@ public class BaseActivity extends HelperActivity {
 			navigationHeader.addProfile(
 						new ProfileSettingDrawerItem()
 						.withName(R.string.sign_in)
-						.withIcon(CommunityMaterial.Icon2.cmd_key_outline)
+						.withIcon(new IconicsDrawable(this, CommunityMaterial.Icon2.cmd_key_outline).color(Color.BLACK))
 						.withIdentifier(ACCOUNT_SIGN_IN), 0);
 		}
 	}

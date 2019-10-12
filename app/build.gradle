@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+	
     defaultConfig {
         applicationId "com.ua.only"
         minSdkVersion 19
@@ -23,10 +24,10 @@ android {
 }
 
 dependencies {
-	api project(':fontawesome_typeface_library')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 	
 	implementation project(':community_material_typeface_library')
+	implementation project(':fontawesome_typeface_library')
 	
 	//General
 	implementation 'com.google.android.material:material:1.1.0-beta01'
@@ -35,6 +36,7 @@ dependencies {
 	//Material Drawer
 	//http://mikepenz.github.io/MaterialDrawer
 	implementation 'com.mikepenz:materialdrawer:6.1.2'
+	implementation 'com.mikepenz:itemanimators:1.1.0'
 	
 	//Firebase Auth
 	implementation 'com.google.firebase:firebase-auth:19.1.0'
